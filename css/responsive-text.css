@@ -1,0 +1,192 @@
+/* Responsive Text Alignments */
+:root {
+    --heading-large: clamp(2rem, 5vw, 2.5rem);
+    --heading-medium: clamp(1.5rem, 4vw, 2rem);
+    --heading-small: clamp(1.2rem, 3vw, 1.5rem);
+    --text-normal: clamp(0.95rem, 2vw, 1rem);
+    --text-small: clamp(0.85rem, 1.5vw, 0.9rem);
+    --line-height-loose: 1.8;
+    --line-height-tight: 1.6;
+}
+
+/* General Text Styles */
+.section-title {
+    font-size: var(--heading-large);
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: var(--heading-medium);
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+p {
+    font-size: var(--text-normal);
+    line-height: var(--line-height-loose);
+    color: var(--text-secondary);
+}
+
+/* Card Text Styles */
+.card-title {
+    font-size: var(--heading-small);
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.card-text {
+    font-size: var(--text-normal);
+    line-height: var(--line-height-tight);
+    color: var(--text-secondary);
+}
+
+/* Project Details */
+.project-title {
+    font-size: var(--heading-large);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    text-align: justify;
+    margin: 2rem 0;
+    font-size: var(--text-normal);
+}
+
+/* About Section */
+.about-text h3 {
+    font-size: var(--heading-medium);
+    margin-bottom: 1.5rem;
+}
+
+.about-text p {
+    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    font-size: var(--text-normal);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-info-item h5 {
+    font-size: var(--heading-small);
+    margin-bottom: 0.5rem;
+}
+
+.contact-info-item p {
+    font-size: var(--text-normal);
+    line-height: var(--line-height-tight);
+}
+
+/* Timeline and Lists */
+.timeline-item h5 {
+    font-size: var(--heading-small);
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+    font-size: var(--text-normal);
+    line-height: var(--line-height-tight);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .about-text h3 {
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .project-description {
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .contact-info-item {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 769px) {
+    .about-text p,
+    .project-description {
+        padding: 0 2rem;
+    }
+
+    .timeline-item {
+        padding-right: 3rem;
+    }
+
+    .contact-info-item {
+        text-align: left;
+    }
+}
+
+/* List Styles */
+ul:not(.navbar-nav) {
+    padding-left: 1.5rem;
+}
+
+ul:not(.navbar-nav) li {
+    margin-bottom: 0.5rem;
+    font-size: var(--text-normal);
+    line-height: var(--line-height-tight);
+}
+
+/* Form Text */
+.form-label {
+    font-size: var(--text-normal);
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.form-control {
+    font-size: var(--text-normal);
+}
+
+/* Button Text */
+.btn {
+    font-size: var(--text-normal);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Footer Text */
+footer p {
+    font-size: var(--text-small);
+    text-align: center;
+}
+
+/* Tags and Badges */
+.tag, .badge {
+    font-size: var(--text-small);
+    padding: 0.35rem 0.75rem;
+}
+
+/* Social Links */
+.social-links {
+    text-align: center;
+}
+
+.social-links a {
+    font-size: var(--heading-small);
+}

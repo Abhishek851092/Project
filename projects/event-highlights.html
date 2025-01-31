@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Highlights - Portfolio Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8ae36f;
+            --secondary-color: #00e6cc;
+            --dark-bg: #0a192f;
+            --darker-bg: #060f1d;
+            --card-bg: #112240;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --text-highlight: #64ffda;
+            --border-color: #1d2d50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+        }
+
+        .navbar {
+            background-color: var(--darker-bg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .project-header {
+            background-color: var(--darker-bg);
+            color: var(--text-primary);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .project-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-category {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+
+        .project-meta {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .project-meta h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            background-color: var(--darker-bg);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .project-image {
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .project-tools {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tool-tag {
+            background-color: var(--darker-bg);
+            color: var(--text-highlight);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .next-prev-projects {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .next-prev-link {
+            text-decoration: none;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .next-prev-link:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--darker-bg);
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .highlight-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--darker-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#portfolio">Back to Portfolio</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="project-header">
+        <div class="container">
+            <h1 class="project-title">Event Highlights</h1>
+            <div class="project-category">Video Production & Editing</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <!-- Project Details -->
+            <div class="col-lg-8">
+                <!-- Main Project Video -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/your-video-id" title="Event Highlights Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+
+                <!-- Project Description -->
+                <div class="project-meta">
+                    <h3>Project Overview</h3>
+                    <p>Specialized in capturing and editing memorable moments from various events, creating compelling highlight videos that tell the story of each occasion. From corporate events to weddings and festivals, each project is crafted to capture the essence and energy of the event.</p>
+                    
+                    <h3 class="mt-4">Production Process</h3>
+                    <ul>
+                        <li>Pre-event planning and shot list preparation</li>
+                        <li>Multi-camera setup and coordination</li>
+                        <li>Dynamic event coverage</li>
+                        <li>Professional audio recording</li>
+                        <li>Post-production editing and color grading</li>
+                        <li>Music selection and sound mixing</li>
+                    </ul>
+
+                    <div class="highlight-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Events Covered</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">100+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">200+</div>
+                            <div class="stat-label">Videos Delivered</div>
+                        </div>
+                    </div>
+
+                    <h3 class="mt-4">Tools Used</h3>
+                    <div class="project-tools">
+                        <span class="tool-tag">Adobe Premiere Pro</span>
+                        <span class="tool-tag">DaVinci Resolve</span>
+                        <span class="tool-tag">Adobe After Effects</span>
+                        <span class="tool-tag">Adobe Audition</span>
+                    </div>
+                </div>
+
+                <!-- Additional Project Videos -->
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/your-video-id-2" title="Corporate Event Highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/your-video-id-3" title="Wedding Highlights" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Project Sidebar -->
+            <div class="col-lg-4">
+                <div class="project-meta">
+                    <h3>Project Details</h3>
+                    <p><strong>Event Types:</strong> Corporate Events, Weddings, Festivals</p>
+                    <p><strong>Delivery Time:</strong> 3-5 days</p>
+                    <p><strong>Services:</strong> Event Videography, Editing, Color Grading</p>
+                    
+                    <h3 class="mt-4">Deliverables</h3>
+                    <ul>
+                        <li>Full Event Documentation</li>
+                        <li>3-5 Minute Highlight Reel</li>
+                        <li>Social Media Cuts</li>
+                        <li>4K Resolution Videos</li>
+                        <li>Professional Color Grading</li>
+                        <li>Custom Music Selection</li>
+                    </ul>
+                </div>
+
+                <div class="project-meta">
+                    <h3>Equipment Used</h3>
+                    <ul>
+                        <li>Professional 4K Cameras</li>
+                        <li>Stabilization Equipment</li>
+                        <li>Professional Audio Gear</li>
+                        <li>Drone for Aerial Shots</li>
+                        <li>Professional Lighting Kit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation between projects -->
+        <div class="next-prev-projects">
+            <div class="row">
+                <div class="col-6">
+                    <a href="motion-graphics.html" class="next-prev-link">← Previous Project</a>
+                </div>
+                <div class="col-6 text-end">
+                    <a href="commercial-video.html" class="next-prev-link">Next Project →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-links mb-4">
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-instagram"></i></a>
+            </div>
+            <p class="text-secondary">© 2025 Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+/* Responsive Typography */
+:root {
+    --font-size-xs: clamp(0.75rem, 1.5vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 1.75vw, 1rem);
+    --font-size-base: clamp(1rem, 2vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 2.5vw, 1.25rem);
+    --font-size-xl: clamp(1.25rem, 3vw, 1.5rem);
+    --font-size-2xl: clamp(1.5rem, 3.5vw, 2rem);
+    --font-size-3xl: clamp(2rem, 4.5vw, 2.5rem);
+    
+    /* Spacing Variables */
+    --section-spacing: clamp(3rem, 8vw, 6rem);
+    --container-padding: clamp(1rem, 5vw, 2rem);
+    --element-spacing: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Mobile First Base Styles */
+body {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* Navigation */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0.5rem var(--container-padding);
+    }
+    
+    .nav-links {
+        background: rgba(10, 25, 47, 0.95);
+        backdrop-filter: blur(10px);
+    }
+    
+    .nav-item {
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hire-btn {
+        margin: 1rem auto;
+        width: 80%;
+    }
+}
+
+/* Hero Section */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: var(--section-spacing) var(--container-padding);
+        text-align: center;
+    }
+    
+    .hero-image {
+        margin: 0 auto 2rem;
+        max-width: 280px;
+    }
+    
+    .social-icons {
+        justify-content: center;
+        margin: 1.5rem 0;
+    }
+}
+
+/* About Section */
+.about-content {
+    gap: var(--element-spacing);
+}
+
+@media (max-width: 768px) {
+    .about-image {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .skills {
+        margin-top: 2rem;
+    }
+}
+
+/* Portfolio Section */
+.portfolio-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.portfolio-item {
+    aspect-ratio: 16/9;
+}
+
+/* Services Section */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Testimonials */
+@media (max-width: 768px) {
+    .testimonial {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .testimonial img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 0 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Images and Media */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Touch-friendly Interactions */
+@media (max-width: 768px) {
+    button,
+    .btn,
+    .nav-item,
+    .social-icon {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1rem;
+    }
+    
+    input,
+    select,
+    textarea {
+        font-size: 16px; /* Prevents iOS zoom on focus */
+        padding: 0.75rem;
+    }
+}
+
+/* Landscape Mode */
+@media (max-height: 500px) and (orientation: landscape) {
+    .nav-links {
+        padding: 1rem;
+    }
+    
+    .nav-item {
+        padding: 0.5rem;
+        border-bottom: none;
+    }
+    
+    .hero-container {
+        min-height: auto;
+        padding: 2rem var(--container-padding);
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 2rem;
+    }
+    
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .nav-container,
+    .social-icons,
+    .hire-btn,
+    .portfolio-filters {
+        display: none;
+    }
+    
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Section Spacing */
+section {
+    padding: var(--section-spacing) 0;
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 2rem 0;
+    }
+}
+
+/* Text Alignment */
+.text-responsive {
+    text-align: left;
+}
+
+@media (min-width: 768px) {
+    .text-responsive {
+        text-align: justify;
+    }
+}
+
+/* Card Text */
+.card-title {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0.75rem;
+}
+
+.card-text {
+    font-size: var(--font-size-base);
+    margin-bottom: 1rem;
+}
+
+/* Project Cards */
+.project-card {
+    margin-bottom: 2rem;
+}
+
+.project-card .card-body {
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .project-card .card-body {
+        padding: 1rem;
+    }
+}
+
+/* About Section */
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-text {
+    padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .about-text {
+        padding: 0 2rem;
+    }
+}
+
+/* Skills Section */
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    font-size: var(--font-size-sm);
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-form label {
+    font-size: var(--font-size-sm);
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: var(--font-size-base);
+    padding: 0.75rem 1rem;
+}
+
+/* Timeline */
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .timeline-item {
+        padding-left: 2rem;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 2rem 0;
+}
+
+footer p {
+    font-size: var(--font-size-sm);
+    margin-bottom: 0;
+}
+
+/* Navigation */
+.navbar-nav .nav-link {
+    font-size: var(--font-size-sm);
+    padding: 0.5rem 1rem;
+}
+
+/* Buttons */
+.btn {
+    font-size: var(--font-size-sm);
+    padding: 0.75rem 1.5rem;
+}
+
+/* Social Icons */
+.social-links {
+    font-size: var(--font-size-lg);
+}
+
+/* Project Details */
+.project-details h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: 1rem;
+}
+
+.project-details p {
+    font-size: var(--font-size-base);
+    line-height: 1.8;
+}
+
+/* Tags and Badges */
+.tag, .badge {
+    font-size: var(--font-size-xs);
+    padding: 0.35rem 0.75rem;
+}
+
+/* Lists */
+ul:not(.navbar-nav) {
+    padding-left: 1.25rem;
+}
+
+ul:not(.navbar-nav) li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Grid Spacing */
+.row {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 2rem;
+}
+
+@media (max-width: 768px) {
+    .row {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+    }
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--
+    Contains metadata about the document, including links to external stylesheets and scripts.
+    Also includes the title of the page, which is displayed in the browser's title bar and in search engine results.
+  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek - Creative Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-animation"></div>
+    </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">
+                    <span class="logo-text">A<span class="logo-dot">.</span></span>
+                </a>
+            </div>
+            
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#home" class="nav-item active">Home</a>
+                    <a href="#about" class="nav-item">About</a>
+                    <a href="#portfolio" class="nav-item">Portfolio</a>
+                    <a href="#services" class="nav-item">Services</a>
+                    <a href="#testimonials" class="nav-item">Testimonials</a>
+                    <a href="#contact" class="nav-item">Contact</a>
+                    <a href="#contact" class="hire-btn">
+                        <span>Let's Talk</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <button class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 data-aos="fade-up">Hi, It's Abhishek</h1>
+                <h2 data-aos="fade-up" data-aos-delay="100">I am a <span class="glowing-text" id="role-text">Graphic Designer</span></h2>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
+                    Creative Graphic Designer & Video Editor with a passion for crafting stunning visuals and engaging content, specializing in branding, motion graphics, and storytelling through design.
+                </p>
+                <div class="social-icons" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#" class="facebook" aria-label="Follow me on Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="instagram" aria-label="Follow me on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="youtube" aria-label="Subscribe on YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="twitter" aria-label="Follow me on X">
+                        <i class="fa-brands fa-x"></i>
+                    </a>
+                    <a href="#" class="linkedin" aria-label="Connect on LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                    <a href="#portfolio" class="cta-button">View My Work</a>
+                    <a href="#contact" class="cta-button outline">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <div class="image-circle">
+                    <img src="images/profile.jpg" alt="Abhishek">
+                </div>
+                <div class="circle-glow"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="decoration-dots"></div>
+        <div class="decoration-circle"></div>
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-image" data-aos="fade-right">
+                <div class="image-wrapper">
+                    <img src="images/profile.jpg" alt="Profile Image">
+                    <div class="image-border"></div>
+                </div>
+                <div class="experience-badge" data-aos="fade-up" data-aos-delay="200">
+                    <span class="years">2+</span>
+                    <span class="text">Years<br>Experience</span>
+                </div>
+            </div>
+            <div class="about-text" data-aos="fade-left">
+                <div class="section-subtitle">About Me</div>
+                <h3>Hello, I'm Abhishek Kumar</h3>
+                <p>With over 2 years of experience in graphic design and video editing, I've helped numerous clients bring their creative visions to life. My passion lies in creating compelling visual stories that engage and inspire.</p>
+                <div class="skills">
+                    <div class="skill-item">
+                        <span class="skill-name">Adobe Photoshop</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Adobe Premiere Pro</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">After Effects</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Illustrator</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">My Portfolio</h2>
+        </div>
+        <div class="portfolio-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="graphic">Graphic Design</button>
+            <button class="filter-btn" data-filter="video">Video Editing</button>
+            <button class="filter-btn" data-filter="motion">Motion Graphics</button>
+        </div>
+        <div class="portfolio-grid">
+            <div class="portfolio-item" data-category="graphic" data-aos="fade-up">
+                <img src="images/portfolio-1.jpg" alt="Brand Identity Design">
+                <div class="overlay">
+                    <h3>Brand Identity Design</h3>
+                    <p>Graphic Design</p>
+                    <a href="projects/brand-identity.html" class="view-project">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="video" data-aos="fade-up">
+                <img src="images/portfolio-2.jpg" alt="Commercial Video">
+                <div class="overlay">
+                    <h3>Commercial Video</h3>
+                    <p>Video Editing</p>
+                    <a href="projects/commercial-video.html" class="view-project">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="motion" data-aos="fade-up">
+                <img src="images/portfolio-3.jpg" alt="Motion Graphics">
+                <div class="overlay">
+                    <h3>Motion Graphics</h3>
+                    <p>Animation</p>
+                    <a href="projects/motion-graphics.html" class="view-project">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="graphic" data-aos="fade-up">
+                <img src="images/portfolio-4.jpg" alt="Social Media Design">
+                <div class="overlay">
+                    <h3>Social Media Design</h3>
+                    <p>Graphic Design</p>
+                    <a href="#" class="view-project">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="video" data-aos="fade-up">
+                <img src="images/portfolio-5.jpg" alt="Event Highlights">
+                <div class="overlay">
+                    <h3>Event Highlights</h3>
+                    <p>Video Editing</p>
+                    <a href="projects/event-highlights.html" class="view-project">View Project</a>
+                </div>
+            </div>
+            <div class="portfolio-item" data-category="motion" data-aos="fade-up">
+                <img src="images/portfolio-6.jpg" alt="Logo Animation">
+                <div class="overlay">
+                    <h3>Logo Animation</h3>
+                    <p>Motion Graphics</p>
+                    <a href="projects/logo-animation.html" class="view-project">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">My Services</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Graphic Design</h3>
+                <p>Creative solutions for your brand identity, including logos, marketing materials, and social media graphics.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-video"></i>
+                <h3>Video Editing</h3>
+                <p>Professional video editing and post-production services for commercials, social media, and corporate videos.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-film"></i>
+                <h3>Motion Graphics</h3>
+                <p>Engaging motion graphics and animations that bring your content to life.</p>
+                <a href="#" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">Client Testimonials</h2>
+        </div>
+        <div class="testimonials-slider" data-aos="fade-up">
+            <div class="testimonial">
+                <img src="images/client-1.jpg" alt="Client 1">
+                <p>"Working with John was an absolute pleasure. His attention to detail and creativity exceeded our expectations."</p>
+                <h4>Sarah Johnson</h4>
+                <span>Marketing Director, Tech Corp</span>
+            </div>
+            <div class="testimonial">
+                <img src="images/client-2.jpg" alt="Client 2">
+                <p>"The video editing work was exceptional. Our product launch video received amazing feedback from our audience."</p>
+                <h4>Michael Chen</h4>
+                <span>CEO, StartUp Inc</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <h2 class="section-title" data-aos="fade-up">Latest Articles</h2>
+        <div class="blog-grid">
+            <article class="blog-post" data-aos="fade-up">
+                <img src="images/blog-1.jpg" alt="Blog Post 1">
+                <div class="post-content">
+                    <h3>10 Tips for Better Video Editing</h3>
+                    <p>Learn the essential tips and tricks to enhance your video editing skills...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+            <article class="blog-post" data-aos="fade-up">
+                <img src="images/blog-2.jpg" alt="Blog Post 2">
+                <div class="post-content">
+                    <h3>The Art of Motion Graphics</h3>
+                    <p>Discover how motion graphics can elevate your brand's visual storytelling...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+            <article class="blog-post" data-aos="fade-up">
+                <img src="images/blog-3.jpg" alt="Blog Post 3">
+                <div class="post-content">
+                    <h3>Graphic Design Trends 2025</h3>
+                    <p>Stay ahead of the curve with these emerging design trends...</p>
+                    <a href="#" class="read-more">Read More</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info" data-aos="fade-right">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>email@example.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+1 234 567 890</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>New York, NY, USA</p>
+                    </div>
+                </div>
+            </div>
+            <form id="contact-form" class="contact-form" data-aos="fade-left">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Subject" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">Abhishek Kumar</h3>
+                <p class="footer-description">Creative Graphic Designer & Video Editor passionate about crafting stunning visuals and engaging content.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#graphic-design">Graphic Design</a></li>
+                    <li><a href="#video-editing">Video Editing</a></li>
+                    <li><a href="#motion-graphics">Motion Graphics</a></li>
+                    <li><a href="#branding">Branding</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">Contact Info</h3>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-envelope"></i> contact@abhishek.com</li>
+                    <li><i class="fas fa-phone"></i> +91 123 456 7890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; 2024 Abhishek Kumar. All rights reserved.
+            </div>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/particles.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Add smooth hover effect to buttons
+        document.querySelectorAll('.hire-btn, .view-project, .submit-btn, .filter-btn, .contact-btn, button[type="submit"]').forEach(button => {
+            button.addEventListener('mousemove', (e) => {
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                button.style.setProperty('--x', `${x}px`);
+                button.style.setProperty('--y', `${y}px`);
+            });
+        });
+
+        // Enhanced scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Hide loading screen after page loads
+        window.addEventListener('load', function() {
+            document.querySelector('.loading-screen').style.display = 'none';
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

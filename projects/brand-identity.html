@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Identity Design - Portfolio Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="../styles/projects.css" rel="stylesheet">
+    <style>
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg));
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            filter: blur(80px);
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .animated-heading {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+
+        .animated-heading::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        .animated-heading:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .btn-custom {
+            position: relative;
+            overflow: hidden;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+
+        .btn-custom:hover::before {
+            left: 0;
+        }
+
+        .btn-custom:hover {
+            color: var(--dark-bg);
+            border-color: transparent;
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-container:hover {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .project-card {
+            background: rgba(17, 34, 64, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .tool-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            border: 1px solid var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.5rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .tool-tag:hover {
+            background: var(--primary-color);
+            -webkit-text-fill-color: var(--dark-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(138, 227, 111, 0.2);
+        }
+
+        .btn-lets-talk {
+            background: transparent;
+            color: var(--primary-color) !important;
+            padding: 0.6rem 1.8rem !important;
+            border-radius: 25px;
+            font-weight: 500;
+            border: 2px solid var(--primary-color);
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-lets-talk:hover {
+            background: var(--primary-color);
+            color: var(--dark-bg) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(138, 227, 111, 0.2);
+        }
+
+        .btn-lets-talk:active {
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background: rgba(10, 25, 47, 0.95);
+                padding: 1rem;
+                border-radius: 10px;
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+            .navbar-nav {
+                gap: 0.8rem;
+            }
+
+            .btn-lets-talk {
+                margin: 0.5rem auto;
+                display: inline-block;
+            }
+
+            .nav-link::after {
+                bottom: -2px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .hero-section {
+                min-height: 90vh;
+            }
+
+            .animated-heading {
+                font-size: calc(2rem + 2vw);
+            }
+        }
+
+        @media (max-width: 991px) {
+            .hero-section {
+                padding: 4rem 0;
+            }
+
+            .hero-section .row {
+                flex-direction: column-reverse;
+            }
+
+            .hero-section .col-lg-6 {
+                margin-bottom: 2rem;
+            }
+
+            .hero-image-container {
+                max-width: 80%;
+                margin: 0 auto 2rem;
+            }
+
+            .btn-custom {
+                padding: 0.75rem 1.5rem;
+                font-size: 1rem;
+            }
+
+            .process-step {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: auto;
+                padding: 6rem 0 4rem;
+            }
+
+            .animated-heading {
+                font-size: calc(1.8rem + 2vw);
+                text-align: center;
+            }
+
+            .hero-section .lead {
+                text-align: center;
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            .hero-section .d-flex.gap-3 {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .btn-custom {
+                width: 100%;
+                margin: 0.5rem 0;
+                text-align: center;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+                margin-top: 2rem;
+            }
+
+            .project-card {
+                padding: 1.5rem;
+            }
+
+            .tool-tag {
+                padding: 0.4rem 0.8rem;
+                margin: 0.3rem;
+                font-size: 0.9rem;
+            }
+
+            .tools-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .scroll-indicator {
+                bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 5rem 0 3rem;
+            }
+
+            .animated-heading {
+                font-size: calc(1.5rem + 2vw);
+            }
+
+            .hero-section .lead {
+                font-size: 1rem;
+            }
+
+            .project-card {
+                padding: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .display-4 {
+                font-size: 2rem;
+            }
+
+            .process-step h3 {
+                font-size: 1.25rem;
+            }
+
+            .floating-shape {
+                opacity: 0.05;
+            }
+
+            #particles-js {
+                opacity: 0.5;
+            }
+        }
+
+        /* Fix for very small devices */
+        @media (max-width: 360px) {
+            .hero-section {
+                padding: 4rem 0 2rem;
+            }
+
+            .animated-heading {
+                font-size: calc(1.3rem + 2vw);
+            }
+
+            .btn-custom {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+
+            .tool-tag {
+                padding: 0.3rem 0.6rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Fix for landscape mode on mobile */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .hero-section {
+                min-height: auto;
+                padding: 3rem 0;
+            }
+
+            .hero-section .row {
+                flex-direction: row;
+            }
+
+            .hero-image-container {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
+        /* Ensure particles canvas is responsive */
+        #particles-js canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .hero-section .container {
+            max-width: 1400px;
+            padding: 0 2rem;
+        }
+
+        .hero-content-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 5%;
+        }
+
+        .hero-text-content {
+            max-width: 700px;
+        }
+
+        .hero-text-content .animated-heading,
+        .hero-text-content .heading-design {
+            font-size: clamp(3.5rem, 5vw, 5rem);
+            line-height: 1.1;
+            font-weight: bold;
+        }
+
+        .hero-text-content .animated-heading {
+            margin-bottom: 0;
+            display: block;
+        }
+
+        .hero-text-content .heading-design {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        @media (max-width: 991px) {
+            .hero-text-content .animated-heading,
+            .hero-text-content .heading-design {
+                font-size: clamp(3rem, 4vw, 4rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text-content .animated-heading,
+            .hero-text-content .heading-design {
+                font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+                text-align: center;
+            }
+
+            .hero-text-content .heading-design {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        .hero-image-container {
+            width: 95%;
+            margin-left: auto;
+        }
+
+        @media (max-width: 991px) {
+            .hero-text-content .animated-heading {
+                font-size: clamp(3rem, 4vw, 4rem);
+            }
+
+            .hero-text-content .heading-design {
+                font-size: clamp(3.5rem, 5vw, 5rem);
+            }
+
+            .hero-text-content .lead {
+                font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+                margin-bottom: 2.5rem;
+            }
+
+            .hero-text-content .btn-custom {
+                font-size: 1.1rem;
+                padding: 0.9rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text-content .animated-heading {
+                font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+                margin-bottom: 0.3rem;
+            }
+
+            .hero-text-content .heading-design {
+                font-size: clamp(3rem, 4vw, 4rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-text-content .lead {
+                font-size: clamp(1rem, 1.2vw, 1.2rem);
+                margin-bottom: 2rem;
+            }
+
+            .hero-text-content .btn-custom {
+                font-size: 1rem;
+                padding: 0.8rem 1.8rem;
+                width: auto;
+                min-width: 200px;
+            }
+        }
+
+        /* Enhanced Header Styles */
+        .navbar {
+            padding: 1.2rem 0;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(138, 227, 111, 0.1);
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .navbar-nav {
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            color: var(--text-primary) !important;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 80%;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <i class="bi bi-code-square"></i>
+                Portfolio
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="brand-identity-contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="brand-identity-contact.html" class="btn btn-lets-talk">
+                            Let's Talk
+                            <span class="arrow-container">
+                                <i class="bi bi-arrow-right"></i>
+                                <i class="bi bi-arrow-right second-arrow"></i>
+                            </span>
+                        </a>
+                    </li>           
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div id="particles-js"></div>
+        <div class="content-wrapper">
+            <div class="floating-shape" style="width: 300px; height: 300px; top: -150px; left: -150px;"></div>
+            <div class="floating-shape" style="width: 200px; height: 200px; bottom: -100px; right: -100px;"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-5 offset-lg-1 hero-content-wrapper">
+                        <div class="hero-text-content">
+                            <h1 class="animated-heading">Brand Identity</h1>
+                            <span class="heading-design">Design</span>
+                            <p class="lead text-light">Crafting unique and memorable brand identities that tell your story and connect with your audience. We create powerful visual experiences that leave a lasting impression.</p>
+                            <div class="d-flex gap-4">
+                                <a href="#process" class="btn btn-lg btn-custom">View Process</a>
+                                <a href="#portfolio" class="btn btn-lg btn-custom">See Portfolio</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 hero-image-wrapper">
+                        <div class="hero-image-container">
+                            <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?w=800&auto=format&fit=crop" alt="Brand Identity Design" class="img-fluid">
+                            <div class="image-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <i class="bi bi-mouse text-light h2"></i>
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-5">
+        <!-- Design Process Section -->
+        <section id="process" class="mb-5">
+            <h2 class="text-center mb-5">Our Design Process</h2>
+            <div class="row">
+                <div class="col-md-4 process-step">
+                    <div class="project-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="display-4 me-3">01</div>
+                            <h3>Discovery</h3>
+                        </div>
+                        <p>Deep dive into brand values, target audience, and market positioning to create a solid foundation.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 process-step">
+                    <div class="project-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="display-4 me-3">02</div>
+                            <h3>Design</h3>
+                        </div>
+                        <p>Creative exploration and development of visual elements that align with brand strategy.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 process-step">
+                    <div class="project-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="display-4 me-3">03</div>
+                            <h3>Deliver</h3>
+                        </div>
+                        <p>Comprehensive brand guidelines and assets ready for implementation across all platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="mb-5">
+            <h2 class="text-center mb-5">Featured Projects</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&auto=format&fit=crop" alt="Brand Guidelines" class="img-fluid">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <h3>Brand Guidelines</h3>
+                        <p>Comprehensive visual identity system with logo variations, typography, and color specifications.</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="project-card h-100">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&auto=format&fit=crop" alt="Brand Applications" class="img-fluid">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <h3>Brand Applications</h3>
+                        <p>Real-world applications of the brand identity across various marketing materials and platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tools Section -->
+        <section class="mb-5">
+            <h2 class="text-center mb-5">Tools & Expertise</h2>
+            <div class="project-card text-center">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="tools-container">
+                            <span class="tool-tag">Adobe Illustrator</span>
+                            <span class="tool-tag">Adobe Photoshop</span>
+                            <span class="tool-tag">Adobe InDesign</span>
+                            <span class="tool-tag">Figma</span>
+                            <span class="tool-tag">Sketch</span>
+                            <span class="tool-tag">After Effects</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-links mb-4">
+                <a href="#"><i class="bi bi-github"></i></a>
+                <a href="#"><i class="bi bi-linkedin"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-envelope"></i></a>
+            </div>
+            <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/particles.js"></script>
+    <script>
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: '#8ae36f'
+                },
+                shape: {
+                    type: 'circle'
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true
+                },
+                size: {
+                    value: 3,
+                    random: true
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#8ae36f',
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: true,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: 'repulse'
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: 'push'
+                    },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Initialize GSAP
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate heading on load
+        gsap.from('.animated-heading', {
+            duration: 1,
+            y: 50,
+            opacity: 0,
+            ease: 'power3.out'
+        });
+
+        // Animate hero content
+        gsap.from('.hero-image-container', {
+            duration: 1.2,
+            x: 100,
+            opacity: 0,
+            ease: 'power3.out',
+            delay: 0.3
+        });
+
+        // Animate floating shapes
+        gsap.to('.floating-shape', {
+            y: 100,
+            duration: 2,
+            yoyo: true,
+            repeat: -1,
+            ease: "power1.inOut",
+            stagger: {
+                amount: 1
+            }
+        });
+
+        // Animate process steps on scroll
+        gsap.utils.toArray('.process-step').forEach((step, i) => {
+            gsap.from(step, {
+                scrollTrigger: {
+                    trigger: step,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                x: -50,
+                duration: 1,
+                delay: i * 0.2
+            });
+        });
+
+        // Animate project cards on scroll
+        gsap.utils.toArray('.project-card').forEach((card) => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add resize handler for particles
+        window.addEventListener('resize', function() {
+            if (window.innerWidth <= 768) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: {
+                            value: 40 // Reduce number of particles on mobile
+                        },
+                        size: {
+                            value: 2 // Smaller particles on mobile
+                        }
+                    }
+                });
+            }
+        });
+
+        // Adjust GSAP animations for mobile
+        if (window.innerWidth <= 768) {
+            // Modify animation values for better mobile performance
+            gsap.from('.animated-heading', {
+                duration: 0.8,
+                y: 30,
+                opacity: 0,
+                ease: 'power2.out'
+            });
+
+            gsap.from('.hero-image-container', {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                ease: 'power2.out',
+                delay: 0.2
+            });
+        }
+        
+        AOS.init({
+            delay: 200,
+            duration: 600,
+            easing: 'ease-in-out',
+            once: true
+        });
+    </script>
+</body>
+</html>
